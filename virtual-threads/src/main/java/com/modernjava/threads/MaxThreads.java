@@ -22,6 +22,9 @@ public class MaxThreads {
 
     public static void main(String[] args) {
 
+        final int MAX_THREADS = 10;
+        IntStream.range(0, MAX_THREADS)
+                .forEach(i -> Thread.ofPlatform().start(() -> MaxThreads.doSomeWork(i)));
         log("Program Completed!");
 
     }
